@@ -24,14 +24,13 @@ const eventVideos = [
   {id:'1osfHfLOD11uYQWvf_ovHBPj5zpQSCs5p',title:'Live with U.S. client · 2'}
 ];
 const research = [
-  {type:'MBA · Financial management',title:'The Impact of Increased Minimum Net Pay on Employee Financial Literacy',description:'Final course research examining the relationship between changes in minimum net pay and the financial literacy of Provincial Government of Misamis Occidental employees.',url:'https://docs.google.com/document/d/1CYgy54cOP4l47k9HthFphhmcpWrLEGEA/edit?usp=sharing&ouid=104321114381789564015&rtpof=true&sd=true'},
-  {type:'MBA · Business research',title:'Employee Motivation: A Tool for Organizational Success',description:'Explores how employee motivation can enhance workplace performance, improve productivity, and contribute to organizational success.',url:'https://docs.google.com/document/d/1cpWoRivgAF4g_cmXcrVmt8dGJP6CD9Fq/edit?usp=sharing&ouid=104321114381789564015&rtpof=true&sd=true'},
-  {type:'MBA · Marketing management',title:'LANECO Marketing Plan',description:'A comprehensive strategy to strengthen market presence, promote services, and identify opportunities for growth and customer engagement.',url:'https://docs.google.com/document/d/1g4PP9j1G4XeY_28WBBbfeIKZWhODcmqZ/edit?usp=sharing&ouid=104321114381789564015&rtpof=true&sd=true'},
+  {type:'MBA · Business research',title:'Employee Motivation: A Tool for Organizational Success',description:'Explores how employee motivation can enhance workplace performance, improve productivity, and contribute to organizational success.',url:'https://drive.google.com/file/d/1YE6_-kSsJMGvJSeEil1hLqtGnQHhOgdd/view?usp=sharing'},
+  {type:'MBA · Marketing management',title:'LANECO Marketing Plan',description:'A comprehensive strategy to strengthen market presence, promote services, and identify opportunities for growth and customer engagement.',url:'https://drive.google.com/file/d/1NNeAiTSIfGQucg20wbF6obHYdcKNJT1M/view?usp=sharing'},
   {type:'MBA · Final requirement',title:'Aksal Luxury Strategic Plan',description:'Systematic Approach in Driving Greater Performance and Productivity: a strategic framework for stronger performance, operational productivity, and long-term growth.',url:'https://drive.google.com/file/d/1y_B4yKszwrbVoCWqG9flVz90VSSNmWrN/view?usp=sharing'},
+  {type:'PBDIT · Capstone',title:'Final requirement / capstone',description:'Final academic requirement completed for the Post-Baccalaureate Diploma in Information Technology program.',url:'https://drive.google.com/file/d/1mqvzbpsrXfLXZDjYi5VcRniBUdjlcTvq/view?usp=sharing'},
   {type:'PBDIT · System development',title:'25%–50% progress',description:'Established the system’s core functionality, structure, and how its components work together before adding the visual design layer.',url:'https://drive.google.com/file/d/1gpF-cmnDBHO512uY3iKu2Toxadk1btET/view?usp=sharing'},
   {type:'PBDIT · System development',title:'50%–75% progress',description:'A near-complete system with design incorporated; remaining work focused on refining functions, adding features, and improving performance and usability.',url:'https://drive.google.com/file/d/1OChoT5hvAZndWN3bsLziEYxBIXp6Io0f/view?usp=sharing'},
-  {type:'PBDIT · Final presentation',title:'Final system presentation',description:'Presentation of the completed system and its final functionality.',url:'https://drive.google.com/file/d/1icnATEeKYCa4Mk_Pbp4mdrmbU2BzTqxF/view?usp=sharing'},
-  {type:'PBDIT · Capstone',title:'Final requirement / capstone',description:'Final academic requirement completed for the Post-Baccalaureate Diploma in Information Technology program.',url:'https://drive.google.com/file/d/1icnATEeKYCa4Mk_Pbp4mdrmbU2BzTqxF/view?usp=sharing'}
+  {type:'PBDIT · Final presentation',title:'Final system presentation',description:'Presentation of the completed system and its final functionality.',url:'https://drive.google.com/file/d/1icnATEeKYCa4Mk_Pbp4mdrmbU2BzTqxF/view?usp=sharing'}
 ];
 const certificates = [
   {name:'Civil Service · Sub-Professional Eligibility',issuer:'Civil Service Commission',date:'August 2022'},
@@ -127,6 +126,7 @@ mainNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', ()
   menuToggle?.setAttribute('aria-expanded', 'false');
 }));
 
+document.querySelectorAll('main > section, .site-footer').forEach(section => section.classList.add('reveal'));
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -134,7 +134,7 @@ const revealObserver = new IntersectionObserver(entries => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, {threshold: 0.12});
+}, {threshold: 0.05, rootMargin: '0px 0px -35px 0px'});
 document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
 const navLinks = [...document.querySelectorAll('.main-nav a[href^="#"]')];
 const sectionObserver = new IntersectionObserver(entries => {
